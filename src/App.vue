@@ -1,6 +1,4 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+
 
 <template>
   <div>
@@ -13,7 +11,15 @@ import HelloWorld from './components/HelloWorld.vue'
   </div>
   <HelloWorld msg="Vite + Vue" />
 </template>
+<script setup>
+import {ref,onMounted } from 'vue'
+import HelloWorld from './components/HelloWorld.vue'
 
+onMounted(() => {
+  console.log('頁面使用環境變數',import.meta.env.VITE_API_URL
+)
+})
+</script>
 <style scoped>
 .logo {
   height: 6em;
